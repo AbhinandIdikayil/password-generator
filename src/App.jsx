@@ -9,6 +9,7 @@ function App() {
   const [password, setPassword] = useState('');
 
   const generatePassword = useCallback(() => {
+    // console.log('hi from useCallback')
     let pass = ''
     let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     if (numbersAllowed) str += '1234567890'
@@ -18,6 +19,7 @@ function App() {
       pass += str.charAt(char)
     }
     setPassword(pass)
+    console.log(pass)
   }, [length, numbersAllowed, charAllowed]);
 
   useEffect(() => {
